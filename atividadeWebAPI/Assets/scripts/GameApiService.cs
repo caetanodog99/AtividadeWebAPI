@@ -7,10 +7,10 @@ using UnityEngine;
 
 
 
-public class GameApiService
+public class GameApiSersce
 {
     private readonly HttpClient httpClient;
-    private const string BASE_URL = "https://68f971c1ef8b2e621e7c15fa.mockapi.io";
+    private const string BASE_URL = "http://localhost:5172/api";
     public string idteste;
 
     public GameApiService()
@@ -24,14 +24,14 @@ public class GameApiService
         idteste = "1";
     }
 
-    //Métodos dos jogadores
+
 
     public async Task<Jogador[]> GetTodosJogadores()
     {
         try
         {
             string url =
-            $"{BASE_URL}/Player";
+            $"{BASE_URL}/players";
             Debug.Log($"GET: {url}");
             HttpResponseMessage response = await httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
@@ -54,7 +54,7 @@ public class GameApiService
     {
         try
         {
-            string url = $"{BASE_URL}/Player/{id}";
+            string url = $"{BASE_URL}/players/{id}";
             Debug.Log($"GET: {url}");
 
             HttpResponseMessage response = await httpClient.GetAsync(url);
@@ -77,7 +77,7 @@ public class GameApiService
     {
         try
         {
-            string url = $"{BASE_URL}/Player/1";
+            string url = $"{BASE_URL}/players/1";
             Debug.Log($"PUT: {url}");
 
             string json = JsonUtility.ToJson(jogador);
@@ -107,7 +107,7 @@ public class GameApiService
     {
         try
         {
-            string url = $"{BASE_URL}/Player";
+            string url = $"{BASE_URL}/players";
             Debug.Log($"POST: {url}");
 
             string json = JsonUtility.ToJson(jogador);

@@ -2,11 +2,11 @@
 {
     public class Player
     {
-        public string id;
-        public int Vida;
-        public int QuantidadeItens;
-        public string PosicaoX;
-        public string PosicaoY;
-        public string PosicaoZ;
+        public string id { get; set; }
+        public int Vida { get; set; }
+        public int QuantidadeItens { get; set; }
+        public string PosicaoX { get; set; }
+        public string PosicaoY { get; set; }
+        public string PosicaoZ { get; set; }
     }
 }

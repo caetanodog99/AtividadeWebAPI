@@ -16,8 +16,9 @@ public class TesteAPI : MonoBehaviour
         Debug.Log("=== TESTE DA API ===");
 
         Jogador novoJogador1 = new Jogador();
-        novoJogador1.Vida = jogador.GetVida();
-        novoJogador1.QuantidadeItens = jogador.GetItens();
+        novoJogador1.id = "1";
+        novoJogador1.Vida = 5;
+        novoJogador1.QuantidadeItens = 0;
         novoJogador1.PosicaoX = jogador.transform.position.x.ToString("F2");
         novoJogador1.PosicaoY = jogador.transform.position.y.ToString("F2");
         novoJogador1.PosicaoZ = jogador.transform.position.z.ToString("F2");
